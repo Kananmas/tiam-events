@@ -24,10 +24,10 @@ export function EventSearchFilter() {
 
                 return <div key={randomString()} className="mx-2">
                     <label className="h-[12px] text-gray-400">{camelCaseKey}:</label>
-                    <Input startContent={<>All {camelCaseKey}s</>} className="bg-white w-[250px] h-[40px] align-middle rounded-[12px] px-2 py-2" />
+                    <Input startContent={<>All {camelCaseKey}s...</>} className="bg-white w-[250px] h-[40px] align-middle rounded-[12px] px-2 py-2 my-1" />
                 </div>
             })
         }
         <Button className="w-[45px] h-[45px] flex justify-center bg-red-500 rounded-full" startContent={<SearchIcon width={30} height={30} />} />
     </div>
-}
+}   

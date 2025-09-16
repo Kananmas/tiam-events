@@ -3,12 +3,18 @@
 import { EventSearchFilter } from "@/components/EventSearchFilter";
 import { Header } from "@/components/Header";
 
+import WeekEndConcert from "@/../public/images/weekend-concert.png"
+import WeeKEndConcert2 from "@/../public/images/weekend-concert-2.png"
+import Image from "next/image";
+import { Button, Slider } from "@nextui-org/react";
+import { Carousel } from "@/components/Carousel";
+import { Hero } from "@/components/Hero";
+
+
 export default function Home() {
   return (
     <div className="font-sans bg-linear-to-r from-black via-red-400 to-black h-full">
       <Header />
-
-
       <div className="bg-gradient-to-r text-center from-gray-50 via-violet-50  to-red-950 text-transparent bg-clip-text">
         <h1 className="font-bold text-[28px] my-4">
           Feel The Happiness, Live the Moment
@@ -19,10 +25,41 @@ export default function Home() {
           A night where music speaks louder than words.
         </div>
       </div>
-
-
+      <div className="relative w-full h-[800px]">
+        {/* <Image
+          src={bandImage}
+          alt="Background"
+          className="absolute inset-0 w-full h-full object-top"
+        />
+        <Image
+          src={fanImage}
+          alt="Overlay"
+          className="absolute inset-1 w-full h-[50%] object-bottom mix-blend-multiply"
+        /> */}
+      </div>
       <EventSearchFilter />
+      <div className="flex items-center justify-evenly min-h-[200px] text-neutral-400 bg-black">
+        <div className="flex items-center space-x-3 bg-gradient-to-r text-center from-white to-neutral-600 text-transparent bg-clip-text">
+          <h1 className="text-[50px] font-medium">+250</h1>
+          <p className="max-w-[130px] text-[15px] text-gray-500">cities used to host concerts</p>
+        </div>
+        <div className="flex items-center space-x-3 bg-gradient-to-r text-center from-white to-neutral-600 text-transparent bg-clip-text">
+          <h1 className="text-[50px] font-medium">+70</h1>
+          <p className="max-w-[130px] text-[15px] text-gray-500"> more than 70 artists joined</p>
+        </div>
+        <div className="flex items-center space-x-3 bg-gradient-to-r text-center from-white to-neutral-600 text-transparent bg-clip-text">
+          <h1 className="text-[50px] font-medium">+320</h1>
+          <p className="max-w-[130px] text-[15px] text-gray-500">registered to be in a concert venue</p>
+        </div>
+      </div>
 
+      <Carousel>
+        <Hero 
+         bgImage={"../../../public/images/weekend-concert.png"}
+         className="w-full h-full">
+          testing
+         </Hero>
+      </Carousel>
     </div>
   );
 }
