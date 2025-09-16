@@ -7,6 +7,7 @@ import { Carousel } from "@/components/Carousel";
 import { EventHero } from "./_local_components/EventHero";
 import { PopularEvents } from "./_local_components/PopularEvents";
 import { EventScheduler } from "./_local_components/EventScheduler";
+import { FAQ } from "./_local_components/FAQ";
 
 
 export default function Home() {
@@ -52,6 +53,7 @@ export default function Home() {
       </div>
       <PopularEvents />
       <EventScheduler />
+      <FAQ />
     </div>
   );
 }

@@ -2,6 +2,7 @@
 
 import { randomString } from "@/utils/random-string.utils"
 import { Button } from "@nextui-org/react"
+import { ArrowRight, ArrowLeft } from "lucide-react"
 import { useEffect, useMemo, useState } from "react"
 
 const buttonsClassName = "h-[50px] disabled:bg-gray-200 w-[50px] bg-neutral-800/80 rounded-[12px]"
@@ -46,17 +47,17 @@ export const Carousel = ({ children, title , setPage = () =>{} , page=0}:Carouse
         <div className="flex items-center justify-evenly">
             <Button
                 disabled={currentPage == 0}
-                onPress={handleClickNext}
+                onPress={handleClickBack}
                 className={buttonsClassName}>
-                {"<"}
+                <ArrowLeft />
             </Button>
             <div className="max-h-[400px] max-w-[1000px] flex items-center">
                 {currentChild}
             </div>
             <Button disabled={currentPage == len - 1}
-                onPress={handleClickBack}
+                onPress={handleClickNext}
                 className={buttonsClassName}>
-                {">"}
+                <ArrowRight />
             </Button>
         </div>
     </div>
