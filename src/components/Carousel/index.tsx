@@ -1,14 +1,63 @@
-import { Button } from "@nextui-org/react"
+'use client'
 
-export const Carousel = ({children}:{children:React.ReactNode}) => {
-    return <div className="bg-black py-10 text-center">
-        <h1 className="text-[50px] font-bold">Popular Now</h1>
+import { randomString } from "@/utils/random-string.utils"
+import { Button } from "@nextui-org/react"
+import { useEffect, useMemo, useState } from "react"
+
+const buttonsClassName = "h-[50px] disabled:bg-gray-200 w-[50px] bg-neutral-800/80 rounded-[12px]"
+
+type CarouselProps = { children: React.ReactNode, title: string  , setPage?:Function , page?:number}
+
+export const Carousel = ({ children, title , setPage = () =>{} , page=0}:CarouselProps) => {
+    const [currentPage, setCurrentPage] = useState(0)
+    const len = Array.isArray(children) ? children.length : 0;
+
+    const currentChild = useMemo(() => {
+        if (!Array.isArray(children)) return children;
+        return children[currentPage]
+    }, [currentPage])
+
+    function changePange(action: string) {
+        const goBack = action == "back";
+        if (goBack) {
+            if (currentPage != 0) setCurrentPage(currentPage - 1)
+            return;
+        }
+        if (currentPage == len - 1) return;
+        setCurrentPage(currentPage + 1)
+    }
+
+    useEffect(() => {
+        setPage(currentPage)
+    }, [currentPage])
+
+
+    function handleClickNext() {
+        changePange('next');
+    }
+
+    function handleClickBack() {
+        changePange('back')
+    }
+
+
+    return <div className="bg-black py-10 text-center relative">
+        <h1 className="text-[50px] py-8 font-bold">{title}</h1>
         <div className="flex items-center justify-evenly">
-            <Button className="h-[50px] w-[50px] bg-neutral-800/80 rounded-[12px]">{"<"}</Button>
-            <div className="min-h-[800px] min-w-[1000px] flex items-center">
-                {children}
+            <Button
+                disabled={currentPage == len-1}
+                onPress={handleClickNext}
+                className={buttonsClassName}>
+                {"<"}
+            </Button>
+            <div className="max-h-[400px] max-w-[1000px] flex items-center">
+                {currentChild}
             </div>
-            <Button className="h-[50px] w-[50px] bg-neutral-800/80 rounded-[12px]">{">"}</Button>
+            <Button disabled={currentPage == 0}
+                onPress={handleClickBack}
+                className={buttonsClassName}>
+                {">"}
+            </Button>
         </div>
     </div>
 }

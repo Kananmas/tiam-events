@@ -3,12 +3,10 @@
 import { EventSearchFilter } from "@/components/EventSearchFilter";
 import { Header } from "@/components/Header";
 
-import WeekEndConcert from "@/../public/images/weekend-concert.png"
-import WeeKEndConcert2 from "@/../public/images/weekend-concert-2.png"
-import Image from "next/image";
-import { Button, Slider } from "@nextui-org/react";
 import { Carousel } from "@/components/Carousel";
-import { Hero } from "@/components/Hero";
+import { EventHero } from "./_local_components/EventHero";
+import { PopularEvents } from "./_local_components/PopularEvents";
+import { EventScheduler } from "./_local_components/EventScheduler";
 
 
 export default function Home() {
@@ -25,7 +23,7 @@ export default function Home() {
           A night where music speaks louder than words.
         </div>
       </div>
-      <div className="relative w-full h-[800px]">
+      <div className="relative w-full h-[400px]">
         {/* <Image
           src={bandImage}
           alt="Background"
@@ -52,14 +50,8 @@ export default function Home() {
           <p className="max-w-[130px] text-[15px] text-gray-500">registered to be in a concert venue</p>
         </div>
       </div>
-
-      <Carousel>
-        <Hero 
-         bgImage={"../../../public/images/weekend-concert.png"}
-         className="w-full h-full">
-          testing
-         </Hero>
-      </Carousel>
+      <PopularEvents />
+      <EventScheduler />
     </div>
   );
 }
