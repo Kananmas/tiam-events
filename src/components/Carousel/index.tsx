@@ -45,15 +45,15 @@ export const Carousel = ({ children, title , setPage = () =>{} , page=0}:Carouse
         <h1 className="text-[50px] py-8 font-bold">{title}</h1>
         <div className="flex items-center justify-evenly">
             <Button
-                disabled={currentPage == len-1}
+                disabled={currentPage == 0}
                 onPress={handleClickNext}
                 className={buttonsClassName}>
                 {"<"}
             </Button>
-            <div className="max-h-[800px] max-w-[60%] flex items-center">
+            <div className="max-h-[400px] max-w-[1000px] flex items-center">
                 {currentChild}
             </div>
-            <Button disabled={currentPage == 0}
+            <Button disabled={currentPage == len - 1}
                 onPress={handleClickBack}
                 className={buttonsClassName}>
                 {">"}

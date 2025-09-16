@@ -5,7 +5,7 @@ import { MusicIcon } from "../MusicIcon"
 
 export function EventCard({ bgImage, artist, date, eventType, location, description, isPopular }: EventInfo & { isPopular: boolean }) {
 
-    return <div className="max-w-[344px] bg-neutral-800 p-2 rounded-[12px]">
+    return <div className="max-w-[344px] max-h-[606px] bg-neutral-800 p-2 rounded-[12px]">
         {bgImage && <div className="mb-4 relative">
             <Image
                 className="rounded-[12px] w-[344px] h-[344px] object-cover"

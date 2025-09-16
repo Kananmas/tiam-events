@@ -1,5 +1,7 @@
 import { Hero } from "@/components/Hero"
+import { MusicIcon } from "@/components/MusicIcon"
 import type { EventInfo } from "@/types/event.type"
+import { StopwatchIcon } from "@radix-ui/react-icons"
 
 type EventHero = {
     ticketInfo:{
@@ -14,18 +16,18 @@ type EventHero = {
 export const EventHero = ({ bgImage, countDown, eventType, artist, date, description , ticketInfo  , pagination }: EventHero) => {
     return <Hero
         bgImage={bgImage}
-        className="w-[1000px] h-[400px] rounded-[23px] overflow-hidden flex flex-col justify-between">
+        className="w-full max-h-full rounded-[23px] overflow-hidden flex flex-col justify-between">
         <div className="h-[270px] flex flex-col">
             <div className="flex justify-start w-full p-4 space-x-1">
-                <div className="bg-red-500 rounded-[9px] min-w-[80px] text-white text-[14px]">
-                    {countDown}
+                <div className="bg-red-500 rounded-[5px] w-[85px] text-white text-[14px] flex space-x-3 items-center justify-evenly">
+                   <StopwatchIcon /> {countDown}
                 </div>
-                <div className="bg-neutral-900/80 rounded-[9px] min-w-[80px] text-white text-[14px]">
-                    {eventType}
+                <div className="bg-black/90 rounded-[5px] w-[85px] text-white text-[14px] flex space-x-3 items-center justify-evenly">
+                   <MusicIcon /> {eventType}
                 </div>
             </div>
         </div>
-        <div className="flex flex-col bg-neutral-900/80 backdrop-blur-md p-2 h-[130px]">
+        <div className="flex flex-col bg-black/59 backdrop-blur-md p-2 min-h-[130px]">
             <div className="felx flex-row items-center text-start">
                 <div className="w-[50%] text-[22px] text-white  inline-block text-start font-bold">
                     {artist}
@@ -39,7 +41,7 @@ export const EventHero = ({ bgImage, countDown, eventType, artist, date, descrip
                     {description}
                 </p>
             </div>
-            <div className="flex justify-start items-center space-x-6">
+            <div className="flex justify-start items-center space-x-6 mb-15">
                 <p>Ticket Price</p>
                 <span className="text-white">${ticketInfo?.price}</span>
                 <div className="w-[9px]  h-[9px] rounded-full bg-neutral-500"></div>
