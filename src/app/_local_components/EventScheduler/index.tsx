@@ -1,6 +1,9 @@
+import { EventCard } from "@/components/EventCard";
 import { randomString } from "@/utils/random-string.utils";
-import { Button, Select, SelectItem } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import { useState } from "react";
+
+import TomOdell from "@/../public/images/tom-odell.png"
 
 export function EventScheduler() {
     const eventTypes = ["All Events", "Concert", "Stand-up", "Festival", "Workshop"]
@@ -53,11 +56,25 @@ export function EventScheduler() {
                 eventTypes.map((type) => <Button
                     key={randomString()}
                     onPress={() => handleClickEventButton(type)}
-                    className={`${type === currentEvent ? 'bg-red-500':"bg-neutral-900"} rounded-[6px] text-white text-[12px]`}
+                    className={`${type === currentEvent ? 'bg-red-500' : "bg-neutral-900"} rounded-[6px] text-white text-[12px]`}
                 >
                     {type}
                 </Button>)
             }
+        </div>
+        <div>
+            <EventCard
+                isPopular={true}
+                bgImage={TomOdell}
+                artist="Tom Odell"
+                date="3 December 2025"
+                location="Madrid, Spain"
+                description={`With his heartfelt melodies and powerful lyrics, 
+                    Tom Odell is sincerely ready for concerts with
+                     beautiful songs full of meaning and emotion.`}
+
+                eventType="Concert"
+            />
         </div>
     </div>
 }

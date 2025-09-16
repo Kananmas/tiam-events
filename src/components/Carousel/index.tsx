@@ -50,7 +50,7 @@ export const Carousel = ({ children, title , setPage = () =>{} , page=0}:Carouse
                 className={buttonsClassName}>
                 {"<"}
             </Button>
-            <div className="max-h-[400px] max-w-[1000px] flex items-center">
+            <div className="max-h-[800px] max-w-[60%] flex items-center">
                 {currentChild}
             </div>
             <Button disabled={currentPage == 0}

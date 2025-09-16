@@ -1,13 +1,7 @@
 import { Hero } from "@/components/Hero"
-import { StaticImageData } from "next/image"
+import type { EventInfo } from "@/types/event.type"
 
 type EventHero = {
-    bgImage: StaticImageData | string | undefined,
-    countDown: string,
-    eventType: string,
-    artist: string,
-    date: Date | string,
-    description: string,
     ticketInfo:{
         price:number,
         left:number,
@@ -15,7 +9,7 @@ type EventHero = {
         sponsor:string,
     },
     pagination?:React.ReactNode
-}
+} & EventInfo
 
 export const EventHero = ({ bgImage, countDown, eventType, artist, date, description , ticketInfo  , pagination }: EventHero) => {
     return <Hero

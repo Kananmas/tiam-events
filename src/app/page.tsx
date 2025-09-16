@@ -1,6 +1,6 @@
 'use client'
 
-import { EventSearchFilter } from "@/components/EventSearchFilter";
+import { EventSearchFilter } from "@/app/_local_components/EventSearchFilter";
 import { Header } from "@/components/Header";
 
 import { Carousel } from "@/components/Carousel";

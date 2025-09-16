@@ -3,7 +3,7 @@
 import { randomString } from "@/utils/random-string.utils";
 import { Button, Input } from "@nextui-org/react";
 import { useState } from "react"
-import { SearchIcon } from "../SearchIcon";
+import { SearchIcon } from "../../../components/SearchIcon";
 
 export function EventSearchFilter() {
     const [state, setState] = useState({
@@ -28,6 +28,8 @@ export function EventSearchFilter() {
                 </div>
             })
         }
-        <Button className="w-[45px] h-[45px] flex justify-center bg-red-500 rounded-full" startContent={<SearchIcon width={30} height={30} />} />
+        <Button className="w-[50px] h-[50px] flex justify-center bg-red-500 rounded-full">
+            <SearchIcon width={'50'} height={'50'} />
+        </Button>
     </div>
 }   
