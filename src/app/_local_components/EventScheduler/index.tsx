@@ -34,7 +34,7 @@ export function EventScheduler() {
     }
 
 
-    return <div className="bg-black px-24 py-12 flex flex-col">
+    return <div className="px-24 py-12 flex flex-col">
         <div className="flex justify-between items-center">
             <div>
                 <h2
@@ -62,11 +62,12 @@ export function EventScheduler() {
                     return <Button
                         key={randomString()}
                         onPress={() => handleClickEventButton(type)}
-                        startContent={<IconSwitcher name={type} />}
-                        className={`${type === currentEvent ? 'bg-red-500' : "bg-neutral-900"} flex rounded-[6px] text-white text-[12px] h-[30px]`}
-                    >
-                        {" " + type}
-                    </Button>
+                        startContent={<div className="flex items-center justify-around">
+                            <IconSwitcher name={type} />
+                            {type}
+                        </div>}
+                        className={`${type === currentEvent ? 'bg-red-500' : "bg-neutral-900"} min-w-[90px] rounded-[6px] p-2 text-white text-[12px] h-[30px]`}
+                    />
                 })
             }
         </div>
@@ -151,7 +152,7 @@ export function EventScheduler() {
                 useNumbers
                 page={page}
                 setPage={(num: number) => setPage(num)}
-                pageCount={10}
+                pageCount={12}
                 selectedBgColor="red"
                 normalBgColor="black"
                 cellClassName="h-[40px] w-[40px] text-white rounded-[12px] flex items-center justify-center" />

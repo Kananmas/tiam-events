@@ -1,7 +1,7 @@
 export const MusicIcon = (props:React.SVGProps<SVGSVGElement>) => {
     return   <svg
     fill="none"
-    stroke="white"
+    stroke={props.color ?? 'white'}
     strokeWidth="32"
     strokeLinecap="round"
     strokeLinejoin="round"

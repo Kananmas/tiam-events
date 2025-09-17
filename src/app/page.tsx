@@ -8,7 +8,7 @@ import { FAQ } from "./_local_components/FAQ";
 
 export default function Home() {
   return (
-    <div>
+    <div className="font-sans bg-linear-to-r from-black via-red-400 to-black h-full">
       <div className="bg-gradient-to-r text-center from-gray-50 via-violet-50  to-red-950 text-transparent bg-clip-text">
         <h1 className="font-bold text-[28px] my-4">
           Feel The Happiness, Live the Moment
@@ -47,8 +47,10 @@ export default function Home() {
         </div>
       </div>
       <PopularEvents />
-      <EventScheduler />
-      <FAQ />
+      <div className="bg-gradient-to-br from-black via-black to-red-950/30 w-full py-20 bg-neutral-900 overflow-hidden">
+        <EventScheduler />
+        <FAQ />
+      </div>
     </div>
   );
 }

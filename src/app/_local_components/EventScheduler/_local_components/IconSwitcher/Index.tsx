@@ -5,6 +5,7 @@ import { PartyPopperIcon, GraduationCap  , SmileIcon} from "lucide-react";
 
 
 export function IconSwitcher({name}:{name:string}) {
+
     switch(name.toLowerCase()){
         case "stand-up":
             return <SmileIcon  width={15} height={15}/>
