@@ -8,9 +8,9 @@ import { FAQ } from "./_local_components/FAQ";
 
 export default function Home() {
   return (
-    <div className="font-sans bg-linear-to-r from-black via-red-400 to-black h-full">
-      <div className="bg-gradient-to-r text-center from-gray-50 via-violet-50  to-red-950 text-transparent bg-clip-text">
-        <h1 className="font-bold text-[28px] my-4">
+    <div className="font-sans bg-linear-to-r from-black via-red-400/30 mt-[-60] to-black h-full">
+      <div className="bg-gradient-to-r text-center from-gray-50 via-violet-50  to-red-950 text-transparent bg-clip-text py-20">
+        <h1 className="font-bold text-[48px] py-4">
           Feel The Happiness, Live the Moment
         </h1>
         <div className="w-[60%] mx-auto text-[18px] ">

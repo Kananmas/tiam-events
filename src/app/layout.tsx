@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { LanguageProvider } from "@/context/language/provider";
 import { Footer } from "@/components/Footer";
+import { AuthProvider } from "@/context/Auth/provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,13 +30,14 @@ export default function RootLayout({
     <html lang="en">
       <body
       >
-         <LanguageProvider>
-        <div className="font-sans bg-linear-to-r from-black via-red-400 to-black h-full">
-         
+        <AuthProvider>
+          <LanguageProvider>
             <Header />
-            {children}
-        </div>
-        </LanguageProvider>
+            <div className="font-sans bg-linear-to-r from-black via-red-400/50 to-black h-full">
+              {children}
+            </div>
+          </LanguageProvider>
+        </AuthProvider>
         <Footer />
 
       </body>
