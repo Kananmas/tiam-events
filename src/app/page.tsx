@@ -1,10 +1,6 @@
 'use client'
 
 import { EventSearchFilter } from "@/app/_local_components/EventSearchFilter";
-import { Header } from "@/components/Header";
-
-import { Carousel } from "@/components/Carousel";
-import { EventHero } from "./_local_components/EventHero";
 import { PopularEvents } from "./_local_components/PopularEvents";
 import { EventScheduler } from "./_local_components/EventScheduler";
 import { FAQ } from "./_local_components/FAQ";
@@ -12,8 +8,7 @@ import { FAQ } from "./_local_components/FAQ";
 
 export default function Home() {
   return (
-    <div className="font-sans bg-linear-to-r from-black via-red-400 to-black h-full">
-      <Header />
+    <div>
       <div className="bg-gradient-to-r text-center from-gray-50 via-violet-50  to-red-950 text-transparent bg-clip-text">
         <h1 className="font-bold text-[28px] my-4">
           Feel The Happiness, Live the Moment

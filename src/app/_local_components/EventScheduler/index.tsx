@@ -11,7 +11,7 @@ import { Carousel } from "@/components/Carousel";
 export function EventScheduler() {
     const eventTypes = ["All Events", "Concert", "Stand-up", "Festival", "Workshop"]
     const [currentEvent, setCurrentEvent] = useState<string>(eventTypes[0]);
-    const [page, setPage] = useState(0);
+    const [page, setPage] = useState(1);
 
     const timeFrames = [
         { start: "01 January", end: "28 February" },

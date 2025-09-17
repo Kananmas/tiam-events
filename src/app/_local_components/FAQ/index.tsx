@@ -1,5 +1,5 @@
+import { Accordion } from "@/components/Accordion"
 import { randomString } from "@/utils/random-string.utils"
-import { Accordion, AccordionItem } from "@nextui-org/react"
 
 export function FAQ() {
     const questions = [
@@ -37,17 +37,11 @@ export function FAQ() {
             <p className="text-center">Find answers to the most common questions about ticket purchasing, event policies, refunds, and more.</p>
         </div>
         <div className="w-[70%] bg-black mx-auto mt-10">
-            <Accordion variant="splitted" >
-                {
-                    questions.map((question, index) => <AccordionItem
-                        className="bg-neutral-950 mb-5 text-white p-2 rounded-[15px]"
-                        key={index}
-                        aria-label={question.question}
-                        title={question.question}>
-                        {question.answer}
-                    </AccordionItem>)
-                }
-            </Accordion>
+           {
+            questions.map(({question , answer}) => {
+                return <Accordion content={answer} title={question} key={randomString()} />
+            })
+           }
         </div>
     </div>
 }
