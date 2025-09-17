@@ -17,28 +17,27 @@ type authContextValue = {
     openForm?: Function,
 }
 
-const defaultValue:authContextValue = {
-    user:{},
-    setUser:()=>{},
-    openForm:()=>{}
+const defaultValue: authContextValue = {
+    user: {},
+    setUser: () => { },
+    openForm: () => { }
 }
 
 
 export const AuthContext = createContext(defaultValue)
 
-export function AuthProvider({children}:{children:React.ReactNode}) {
+export function AuthProvider({ children }: { children: React.ReactNode }) {
     const [userData, setUserData] = useState(null)
-    const [openForm , setOpenForm] = useState(false)
+    const [openForm, setOpenForm] = useState(false)
     const pathname = usePathname();
 
-    const formOpen = () =>setOpenForm(true)
+    const formOpen = () => setOpenForm(true)
 
-    return <AuthContext.Provider value={{user:userData , openForm:formOpen , setUser:setUserData}}>
-        {
-            (openForm && !userData) && <AuthModalForm open={openForm} setOpen={setOpenForm} canClose={!pathname.endsWith("auth")}/>
-        }
-
+    return <AuthContext.Provider value={{ user: userData, openForm: formOpen, setUser: setUserData }}>
         {children}
+        {
+            (openForm && !userData) && <AuthModalForm open={openForm} setOpen={setOpenForm} canClose={pathname.endsWith("auth")} />
+        }
     </AuthContext.Provider>
 
 }
