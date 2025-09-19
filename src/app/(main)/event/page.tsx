@@ -4,6 +4,7 @@ import WeekendPoster from "@/../public/images/weekend-profile-poster.png"
 import WeekendEvent1 from "@/../public/images/weekend-event-picture-1.png"
 import WeekendEvent2 from "@/../public/images/weekend-event-picture-2.png"
 import WeekendEvent3 from "@/../public/images/weekend-event-picture-3.png"
+import WeekendProfile from "@/../public/images/weekend-profile-photo.png"
 
 
 import TomOdell from "@/../public/images/tom-odell.png"
@@ -17,6 +18,7 @@ import { GradientHeader } from "@/components/GradientHeader";
 import { randomString } from "@/utils/random-string.utils";
 import { ButtonBox } from "@/components/ButtonBox";
 import { useState } from "react";
+import { RatingStars } from "@/components/RatingStarts"
 
 const buttonStyles = "bg-transparent w-[150px] h-[40] text-[14px] rounded-[15px] enabled:bg-neutral-700 m-1 enabled:text-white"
 
@@ -48,19 +50,39 @@ export default function Page() {
     }]
     const comments = [
         {
-            rating:5 ,
-            user:'Isabella',
-            day:"8 December 2025",
-            comment:'Loved the vibe and the setlist, can’t wait for the next show.',
+            rating: 5,
+            user: 'Isabella',
+            day: "8 December 2025",
+            comment: 'Loved the vibe and the setlist, can’t wait for the next show.',
+        },
+        {
+            rating: 4,
+            user: 'Muhammad',
+            day: "8 December 2025",
+            comment: 'The sound quality was amazing, felt like a real live experience.',
+        },
+        {
+            rating: 4,
+            user: 'Muhammad',
+            day: "8 December 2025",
+            comment: 'The sound quality was amazing, felt like a real live experience.',
         }
     ]
 
     return <div className="h-full overflow-hidden">
-        <div className="w-[70%] mx-auto">
+        <div className=" relative w-[70%] mx-auto">
             <Hero
                 bgImage={WeekendPoster}
-                className="relative h-[200px] bg-cover mx-auto rounded-[25px] my-6"
-            />
+                className="h-[200px] flex items-end bg-cover mx-auto rounded-[25px] my-6"
+            >
+                <Hero
+                bgImage={WeekendProfile}
+                className="absoulte bg-cover 
+                bg-center ml-[32px] mb-[-15px] w-[90px] h-[90px]
+                 rounded-full"
+                />
+            </Hero>
+
             <div className="flex justify-between items-center">
                 <div className="flex space-x-2 items-center">
                     <small>Aritst</small>
@@ -143,10 +165,11 @@ export default function Page() {
             <GradientHeader additionalStyles="text-start my-8">Community</GradientHeader>
             <div className="flex flex-row w-auto overflow-x-visible space-x-4">
                 {
-                    comments.map(({ user , comment , day }) => <div 
-                    className="bg-neutral-800 flex flex-col rounded-[24px] items-start p-4"
-                    key={randomString()}>
-                        <div>
+                    comments.map(({ user, rating, comment, day }) => <div
+                        className="bg-neutral-800 flex text-white flex-col rounded-[24px] items-start p-4"
+                        key={randomString()}>
+                        <RatingStars currentRating={rating - 1} />
+                        <div className="my-2">
                             {comment}
                         </div>
                         <div className="mt-8 flex justify-between w-full">
@@ -154,7 +177,7 @@ export default function Page() {
                                 <UserCircle />
                                 <div>{user}</div>
                             </div>
-                            <div>
+                            <div className="text-neutral-600">
                                 {day}
                             </div>
                         </div>

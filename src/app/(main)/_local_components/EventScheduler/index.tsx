@@ -7,6 +7,7 @@ import TomOdell from "@/../public/images/tom-odell.png"
 import { IconSwitcher } from "./_local_components/IconSwitcher/Index";
 import { CustomPagination } from "@/components/CustomPagination";
 import { Carousel } from "@/components/Carousel";
+import { GradientHeader } from "@/components/GradientHeader";
 
 export function EventScheduler() {
     const eventTypes = ["All Events", "Concert", "Stand-up", "Festival", "Workshop"]
@@ -37,11 +38,7 @@ export function EventScheduler() {
     return <div className="px-24 py-12 flex flex-col">
         <div className="flex justify-between items-center">
             <div>
-                <h2
-                    className="text-[40px] font-bold bg-gradient-to-r text-center from-white to-neutral-600 text-transparent bg-clip-text"
-                >
-                    Event Schedule
-                </h2>
+                <GradientHeader>Event Schedule</GradientHeader>
                 <p>the closest concert schedule around you.</p>
             </div>
             <div>
