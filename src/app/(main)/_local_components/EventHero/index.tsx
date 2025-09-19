@@ -16,7 +16,9 @@ type EventHero = {
 export const EventHero = ({ bgImage, countDown, eventType, artist, date, description , ticketInfo  , pagination }: EventHero) => {
     return <Hero
         bgImage={bgImage}
-        className="w-full max-h-full rounded-[23px] overflow-hidden flex flex-col justify-between">
+        className="bg-cover bg-center bg-repeat-none
+         bg-repeat-none w-full max-h-full rounded-[23px]
+          overflow-hidden flex flex-col justify-between">
         <div className="h-[270px] flex flex-col">
             <div className="flex justify-start w-full p-4 space-x-1">
                 <div className="bg-red-500 rounded-[5px] w-[85px] text-white text-[14px] flex space-x-3 items-center justify-evenly">

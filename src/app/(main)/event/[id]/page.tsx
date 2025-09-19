@@ -3,10 +3,10 @@
 import Image from "next/image";
 import WeekEnd from "@/../public/images/weekend-concert.png"
 import { AlertCircle, Clock, ListIcon, LocateIcon, MapIcon, MapPin, User } from "lucide-react";
-import { PageSection } from "../_local_components/PageSection";
-import { TimeTo } from "../_local_components/TimeTo";
-import { EventMap } from "../_local_components/EventMap";
-import { TicketInfo } from "../_local_components/TicketInfo";
+import { PageSection } from "./_local_components/PageSection";
+import { TimeTo } from "./_local_components/TimeTo";
+import { EventMap } from "./_local_components/EventMap";
+import { TicketInfo } from "./_local_components/TicketInfo";
 
 const hashTagStyle = `
     bg-neutral-700 p-2 border-1 border-neutral-600
@@ -14,7 +14,7 @@ const hashTagStyle = `
 `
 
 export default function page() {
-    return <div className="flex h-[1191] justify-center space-x-4 items-center my-16">
+    return <div className="flex justify-center space-x-4 items-center my-16">
         <div className="flex h-full flex-col bg-neutral-900 w-[60%] rounded-[14px] p-4">
             <div>
                 <Image

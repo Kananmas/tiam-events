@@ -6,6 +6,7 @@ import { TiamIcon } from "../TiamIcon";
 import { PhoneNumberInput } from "../PhoneNumberInput";
 import { ArrowLeft, Mail, UserIcon } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
+import { ButtonBox } from "../ButtonBox";
 
 const inputWraper = "relative bg-neutral-900 flex items-center justify-around rounded-[15px] border-1 border-neutral-700 min-h-[50px]"
 const buttonStyles = "bg-transparent w-[150px] h-[40] rounded-[15px] enabled:bg-neutral-700 m-1 enabled:text-white"
@@ -20,14 +21,14 @@ export function AuthModalForm({ open, setOpen, canClose }: { open: boolean, canC
     }
 
     function handleClickBg() {
-        if(canClose) {
+        if (canClose) {
             setOpen(false)
         }
     }
 
     return (
-        <div onClick={handleClickBg} 
-        className="bg-transparent w-full h-full">
+        <div onClick={handleClickBg}
+            className="bg-transparent w-full h-full">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
                 {pathName.endsWith("auth") && <Button
                     className="bg-neutral-900 text-white p-2 my-2 min-w-[80px] flex justify-between rounded-[15px]"
@@ -40,7 +41,7 @@ export function AuthModalForm({ open, setOpen, canClose }: { open: boolean, canC
                 rounded-[32px] p-[12px]">
                     <TiamIcon />
                     <div className="w-full  flex justify-center">
-                        <span className="bg-neutral-800 rounded-[16px] my-4 flex justify-center items-center">
+                        <ButtonBox>
                             <Button
                                 disabled={mode === "signin"}
                                 className={buttonStyles}
@@ -53,7 +54,7 @@ export function AuthModalForm({ open, setOpen, canClose }: { open: boolean, canC
                                 onPress={() => changeMode("signin")}>
                                 Sign In
                             </Button>
-                        </span>
+                        </ButtonBox>
                     </div>
                     <div className="h-[60%] my-3">
                         {mode === "signup" && <>
