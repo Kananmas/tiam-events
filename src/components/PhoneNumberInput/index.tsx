@@ -12,7 +12,7 @@ const phoneCodes = [
   { code: "+81", country: "JP" },
 ]
 
-export function PhoneNumberInput({ onChange = () => { } }: { onChange?: (value:any) => any }) {
+export function PhoneNumberInput({ onChange = () => { } }: { onChange?: (value:string) => void }) {
   const [selectedCode, setSelectedCode] = useState(phoneCodes[0].code)
   const [phoneNumber, setPhoneNumber] = useState("")
 

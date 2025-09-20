@@ -3,7 +3,7 @@
 import { useAuth } from "@/hooks/auth.hook"
 import { useEffect } from "react"
 
-export default function page() {
+export default function Page() {
     const {openForm , closeForm} = useAuth()
     useEffect(() => {
         openForm?.()
