@@ -1,4 +1,5 @@
 import { Accordion } from "@/components/Accordion"
+import { GradientHeader } from "@/components/GradientHeader"
 import { randomString } from "@/utils/random-string.utils"
 
 export function FAQ() {
@@ -31,11 +32,10 @@ export function FAQ() {
         {/* Gradient overlay */}
 
         <div className="relative z-10 mb-10">
-            <h2 className="text-[40px] font-bold bg-gradient-to-r text-center from-white to-neutral-600 text-transparent bg-clip-text">
-                FAQ
-            </h2>
-            <p className="text-center text-gray-300">
-                Find answers to the most common questions about ticket purchasing, event policies, refunds, and more.
+            <GradientHeader additionalStyles="text-[50px]">FAQ</GradientHeader>
+            <p className="text-center text-neutral-300-300 text-[18px]">
+                Find answers to the most common questions about ticket purchasing, 
+                event policies, refunds, and more.
             </p>
         </div>
 

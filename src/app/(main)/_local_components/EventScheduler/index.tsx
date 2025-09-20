@@ -4,7 +4,7 @@ import { Button, Pagination } from "@nextui-org/react";
 import { JSX, useState } from "react";
 
 import TomOdell from "@/../public/images/tom-odell.png"
-import { IconSwitcher } from "./_local_components/IconSwitcher/Index";
+import { EventIconSwitcher } from "../../../../components/IconSwitcher/Index";
 import { CustomPagination } from "@/components/CustomPagination";
 import { Carousel } from "@/components/Carousel";
 import { GradientHeader } from "@/components/GradientHeader";
@@ -52,23 +52,24 @@ export function EventScheduler() {
                 </select>
             </div>
         </div>
-        <div className="flex space-x-1.5 my-8">
+        <div className="flex space-x-[16px] my-8">
             {
                 eventTypes.map((type: string) => {
 
                     return <Button
                         key={randomString()}
                         onPress={() => handleClickEventButton(type)}
-                        startContent={<div className="flex items-center justify-around">
-                            <IconSwitcher name={type} />
+                        startContent={<div className="flex items-center space-x-[3.88px] justify-around">
+                            <EventIconSwitcher name={type} />
                             {type}
                         </div>}
-                        className={`${type === currentEvent ? 'bg-red-500' : "bg-neutral-900"} min-w-[90px] rounded-[6px] p-2 text-white text-[12px] h-[30px]`}
+                        className={`${type === currentEvent ? 'bg-red-500' : "bg-neutral-900"} font-semibold
+                         min-w-[90px] rounded-[12px] px-2 text-white text-[14px] h-[32px]`}
                     />
                 })
             }
         </div>
-        <div className="grid grid-cols-3 space-y-9">
+        <div className="grid grid-cols-3 gap-[24px]">
             <EventCard
                 isPopular={true}
                 bgImage={TomOdell}
@@ -78,7 +79,6 @@ export function EventScheduler() {
                 description={`With his heartfelt melodies and powerful lyrics, 
                     Tom Odell is sincerely ready for concerts with
                      beautiful songs full of meaning and emotion.`}
-
                 eventType="Concert"
             />
             <EventCard
@@ -103,7 +103,7 @@ export function EventScheduler() {
                     Tom Odell is sincerely ready for concerts with
                      beautiful songs full of meaning and emotion.`}
 
-                eventType="Concert"
+                eventType="Stand-up"
             />
             <EventCard
                 isPopular={true}
@@ -152,7 +152,8 @@ export function EventScheduler() {
                 pageCount={12}
                 selectedBgColor="red"
                 normalBgColor="black"
-                cellClassName="h-[40px] w-[40px] text-white rounded-[12px] flex items-center justify-center" />
+                cellClassName="h-[40px] w-[40px] text-white rounded-[12px]
+                 flex items-center justify-center" />
         </div>
     </div>
 }

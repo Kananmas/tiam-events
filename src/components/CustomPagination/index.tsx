@@ -14,6 +14,7 @@ type PaginationProps = {
     setPage?: Function,
 }
 
+const buttonStyles = "w-[40px] h-[40px] px-2 flex justify-center"
 
 export function CustomPagination({ pageCount,
     page,
@@ -54,20 +55,22 @@ export function CustomPagination({ pageCount,
     }
 
     function handleClickBack() {
-        if (page == 0) return
+        if (page == 1) return
         setPage(page - 1)
     }
 
-    return <div className="flex space-x-2.5 justify-center">
-        {useButtons && <Button onPress={handleClickBack}><ArrowLeft /></Button>}
-        {
-            items.length && items.map((text, index) => <div onClick={() => {
-                setPage(text)
-            }}
-                key={randomString()}
-                style={{ background: text === page ? selectedBgColor : normalBgColor }}
-                className={!!cellClassName ? cellClassName : "w-[8px] h-[8px] rounded-full"}>{useNumbers ? text : ''}</div>)
-        }
-        {useButtons && <Button onPress={handleClickNext}><ArrowRight /></Button>}
+    return <div className="flex space-x-[40px] justify-center items-center">
+        {useButtons && <Button className={buttonStyles} onPress={handleClickBack}><ArrowLeft /></Button>}
+        <div className="flex space-x-2.5 justify-center">
+            {
+                items.length && items.map((text, index) => <div onClick={() => {
+                    setPage(text)
+                }}
+                    key={randomString()}
+                    style={{ background: text === page ? selectedBgColor : normalBgColor }}
+                    className={!!cellClassName ? cellClassName : "w-[8px] h-[8px] rounded-full"}>{useNumbers ? text : ''}</div>)
+            }
+        </div>
+        {useButtons && <Button className={buttonStyles} onPress={handleClickNext}><ArrowRight /></Button>}
     </div>
 }

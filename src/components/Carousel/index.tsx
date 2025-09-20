@@ -44,7 +44,7 @@ export const Carousel = ({ children, title , setPage = () =>{} , page=0}:Carouse
 
 
     return <div className="bg-black py-10 text-center relative">
-        <GradientHeader additionalStyles="text-[50px] py-8 mb-5 font-bold">{title}</GradientHeader>
+        <GradientHeader style={{fontWeight:"700px"}} additionalStyles="text-[48px] py-8 mb-5 font-bold">{title}</GradientHeader>
         <div className="flex items-center justify-evenly">
             <Button
                 disabled={currentPage == 0}
@@ -52,7 +52,7 @@ export const Carousel = ({ children, title , setPage = () =>{} , page=0}:Carouse
                 className={buttonsClassName}>
                 <ArrowLeft />
             </Button>
-            <div className="max-h-[400px] max-w-[1000px] flex items-center">
+            <div className="flex items-center">
                 {currentChild}
             </div>
             <Button disabled={currentPage == len - 1}

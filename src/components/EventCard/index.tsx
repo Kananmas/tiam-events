@@ -2,20 +2,23 @@ import Image from "next/image"
 import type { EventInfo } from "@/types/event.type"
 import { Button } from "@nextui-org/react"
 import { MusicIcon } from "../MusicIcon"
+import { EventIconSwitcher } from "../IconSwitcher/Index"
 
 export function EventCard({ bgImage, artist, date, eventType, location, description, isPopular }: EventInfo & { isPopular: boolean }) {
 
-    return <div className="max-w-[344px] max-h-[660px] bg-neutral-800 p-2 rounded-[12px]">
+    return <div className="max-w-[640px] bg-neutral-800 p-3 rounded-[24px]">
         {bgImage && <div className="mb-4 relative">
             <Image
-                className="rounded-[12px] w-[344px] h-[344px] object-cover"
+                className="rounded-[16px] w-[640px] h-[344px] object-cover"
                 src={bgImage}
                 alt="event card image"
             />
             {eventType && (
-                <div className="absolute top-2 left-2 flex items-center justify-start space-x-1">
-                    {isPopular && <div className=" bg-black/60 text-white text-sm px-2 py-1 rounded-md">🔥Popular</div>}
-                    <div className="flex space-x-0.5 bg-black/60 text-white text-sm px-2 py-1 rounded-md"><MusicIcon/>{eventType}</div>
+                <div className="absolute top-2 left-2 flex items-center justify-start space-x-[16px]">
+                    {isPopular && <div className=" bg-black/30 text-white text-sm px-2 py-1 rounded-[12px]">🔥 Popular</div>}
+                    <div className="flex space-x-0.5 bg-black/30 text-white text-sm px-2 py-1 rounded-[12px]">
+                        <EventIconSwitcher name={eventType} />{" " + eventType}
+                    </div>
                 </div>
             )}
         </div>}
