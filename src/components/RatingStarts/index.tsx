@@ -1,17 +1,17 @@
 import { randomString } from "@/utils/random-string.utils"
 import { Star } from "lucide-react"
-import { useEffect, useState } from "react"
+import { Dispatch, SetStateAction, useEffect, useState } from "react"
 
 export function RatingStars({currentRating = -1 , onRatingChange}:{
     currentRating?:number,
-    onRatingChange?:Function
+    onRatingChange?:Dispatch<SetStateAction<number>>
 }) {
     const array = Array.from({ length: 5 })
     const [rate, setRate] = useState(currentRating)
 
     useEffect(() => {
         if(onRatingChange) {
-            onRatingChange();
+            onRatingChange(currentRating);
         }
     } , [rate])
 
