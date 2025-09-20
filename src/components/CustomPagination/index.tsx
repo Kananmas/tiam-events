@@ -1,7 +1,7 @@
 import { randomString } from "@/utils/random-string.utils";
 import { Button } from "@nextui-org/react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { useMemo } from "react";
+import { Dispatch, SetStateAction, useMemo } from "react";
 
 type PaginationProps = {
     pageCount: number,
@@ -11,7 +11,7 @@ type PaginationProps = {
     selectedBgColor?: string,
     normalBgColor?: string
     useButtons?: boolean,
-    setPage?: Function,
+    setPage?: Dispatch<SetStateAction<number>> | (() => void)
 }
 
 const buttonStyles = "w-[40px] h-[40px] px-2 flex justify-center"
@@ -64,7 +64,7 @@ export function CustomPagination({ pageCount,
         <div className="flex space-x-2.5 justify-center">
             {
                 items.length && items.map((text, index) => <div onClick={() => {
-                    setPage(text)
+                    setPage(Number(text))
                 }}
                     key={randomString()}
                     style={{ background: text === page ? selectedBgColor : normalBgColor }}

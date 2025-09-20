@@ -4,6 +4,8 @@ import { Button } from "@nextui-org/react"
 import { MusicIcon } from "../MusicIcon"
 import { EventIconSwitcher } from "../IconSwitcher/Index"
 
+const badgeStyles= " flex items-center space-x-0.5 bg-black/30 h-[32px] text-white text-sm px-2 py-1 rounded-[12px]"
+
 export function EventCard({ bgImage, artist, date, eventType, location, description, isPopular }: EventInfo & { isPopular: boolean }) {
 
     return <div className="max-w-[640px] bg-neutral-800 p-3 rounded-[24px]">
@@ -15,14 +17,14 @@ export function EventCard({ bgImage, artist, date, eventType, location, descript
             />
             {eventType && (
                 <div className="absolute top-2 left-2 flex items-center justify-start space-x-[16px]">
-                    {isPopular && <div className=" bg-black/30 text-white text-sm px-2 py-1 rounded-[12px]">🔥 Popular</div>}
-                    <div className="flex space-x-0.5 bg-black/30 text-white text-sm px-2 py-1 rounded-[12px]">
+                    {isPopular && <div className={badgeStyles}>🔥 Popular</div>}
+                    <div className={badgeStyles }>
                         <EventIconSwitcher name={eventType} />{" " + eventType}
                     </div>
                 </div>
             )}
         </div>}
-        <div className="text-[25px] font-semibold text-white">
+        <div className="text-[24px] font-semibold text-white">
             {artist}
         </div>
         <div className="flex justify-between text-white">

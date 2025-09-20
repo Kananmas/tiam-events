@@ -3,12 +3,12 @@
 import { randomString } from "@/utils/random-string.utils"
 import { Button } from "@nextui-org/react"
 import { ArrowRight, ArrowLeft } from "lucide-react"
-import { useEffect, useMemo, useState } from "react"
+import { Dispatch, SetStateAction, useEffect, useMemo, useState } from "react"
 import { GradientHeader } from "../GradientHeader"
 
 const buttonsClassName = "h-[50px] flex justify-center items-center disabled:bg-gray-200 w-[50px] bg-neutral-800/80 rounded-[12px]"
 
-type CarouselProps = { children: React.ReactNode, title: string  , setPage?:Function , page?:number}
+type CarouselProps = { children: React.ReactNode, title: string  , setPage?:Dispatch<SetStateAction<number>> , page?:number}
 
 export const Carousel = ({ children, title , setPage = () =>{} , page=0}:CarouselProps) => {
     const [currentPage, setCurrentPage] = useState(0)

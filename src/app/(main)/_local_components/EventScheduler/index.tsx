@@ -148,7 +148,7 @@ export function EventScheduler() {
                 useButtons
                 useNumbers
                 page={page}
-                setPage={(num: number) => setPage(num)}
+                setPage={setPage}
                 pageCount={12}
                 selectedBgColor="red"
                 normalBgColor="black"
