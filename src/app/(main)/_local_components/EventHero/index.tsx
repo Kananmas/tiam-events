@@ -20,7 +20,7 @@ export const EventHero = ({ bgImage, countDown, eventType, artist, date, descrip
     return <Hero
         bgImage={bgImage}
         className="bg-cover bg-center bg-repeat-none
-         bg-repeat-none max-w-[1176px] max-h-[520px] rounded-[24px]
+         bg-repeat-none w-[1176px] max-h-[520px] rounded-[24px]
           overflow-hidden flex flex-col justify-between">
         <div className="h-[270px] flex flex-col">
             <div className="flex justify-start w-full p-4 space-x-[16px]">

@@ -64,7 +64,7 @@ export function CustomPagination({ pageCount,
         <div className="flex space-x-2.5 justify-center">
             {
                 items.length && items.map((text, index) => <div onClick={() => {
-                    setPage(Number(text))
+                    setPage(index+1)
                 }}
                     key={randomString()}
                     style={{ background: text === page ? selectedBgColor : normalBgColor }}

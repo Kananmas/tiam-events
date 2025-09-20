@@ -35,14 +35,14 @@ export function EventScheduler() {
     }
 
 
-    return <div className="px-24 py-12 flex flex-col">
+    return <div className="px-24 pt-[82px] pb-[86px] flex flex-col">
         <div className="flex justify-between items-center">
             <div>
                 <GradientHeader>Event Schedule</GradientHeader>
                 <p>the closest concert schedule around you.</p>
             </div>
-            <div>
-                <select className="appearance-auto text-white bg-neutral-900 text-[13px] focus:ring-blue-700 p-2 rounded-[8px]">
+            <div className="text-white font-semibold bg-neutral-900 text-[14px] rounded-[8px] p-2">
+                <select className="appearance-auto text-white font-semibold bg-neutral-900 ">
                     {
                         timeFrames.map((item) => <option
                             key={randomString()}>
@@ -63,7 +63,7 @@ export function EventScheduler() {
                             <EventIconSwitcher name={type} />
                             {type}
                         </div>}
-                        className={`${type === currentEvent ? 'bg-red-500' : "bg-neutral-900"} font-semibold
+                        className={`${type === currentEvent ? 'bg-rose-500' : "bg-neutral-900"} font-semibold
                          min-w-[90px] rounded-[12px] px-2 text-white text-[14px] h-[32px]`}
                     />
                 })
@@ -142,17 +142,16 @@ export function EventScheduler() {
                 eventType="Concert"
             />
         </div>
-        <div className="w-ful h-[400px] flex justify-center items-center">
-
+        <div className="w-full mt-[44px] flex justify-center items-center">
             <CustomPagination
                 useButtons
                 useNumbers
                 page={page}
                 setPage={setPage}
                 pageCount={12}
-                selectedBgColor="red"
+                selectedBgColor="rgb(255 , 32 , 86)"
                 normalBgColor="black"
-                cellClassName="h-[40px] w-[40px] text-white rounded-[12px]
+                cellClassName="h-[32px] w-[32px] text-white rounded-[12px]
                  flex items-center justify-center" />
         </div>
     </div>

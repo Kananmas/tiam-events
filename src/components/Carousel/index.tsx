@@ -1,6 +1,5 @@
 'use client'
 
-import { randomString } from "@/utils/random-string.utils"
 import { Button } from "@nextui-org/react"
 import { ArrowRight, ArrowLeft } from "lucide-react"
 import { Dispatch, SetStateAction, useEffect, useMemo, useState } from "react"

@@ -8,7 +8,7 @@ const badgeStyles= " flex items-center space-x-0.5 bg-black/30 h-[32px] text-whi
 
 export function EventCard({ bgImage, artist, date, eventType, location, description, isPopular }: EventInfo & { isPopular: boolean }) {
 
-    return <div className="max-w-[640px] bg-neutral-800 p-3 rounded-[24px]">
+    return <div className="max-w-[640px] bg-[#191919] p-3 rounded-[24px]">
         {bgImage && <div className="mb-4 relative">
             <Image
                 className="rounded-[16px] w-[640px] h-[344px] object-cover"
@@ -27,7 +27,7 @@ export function EventCard({ bgImage, artist, date, eventType, location, descript
         <div className="text-[24px] font-semibold text-white">
             {artist}
         </div>
-        <div className="flex justify-between text-white">
+        <div className="flex justify-between my-[12px] text-white">
             <div>
                 {date instanceof Date ? date.toLocaleDateString() : date}
             </div>
@@ -35,10 +35,10 @@ export function EventCard({ bgImage, artist, date, eventType, location, descript
                 {location}
             </div>
         </div>
-        <div className="mt-4 mb-10 text-gray-400">
+        <div className="mt-4 h-[96px] mb-[20px] text-[#AFAFAF]">
             {description}
         </div>
-        <Button className="text-center w-full min-h-[40px] font-semibold 
+        <Button className="text-center mb-[12px] w-full min-h-[44px] font-semibold 
         text-white rounded-full border-1 border-white">
             Details
         </Button>

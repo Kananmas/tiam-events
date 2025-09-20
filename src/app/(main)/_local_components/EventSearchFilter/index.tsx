@@ -18,7 +18,7 @@ export function EventSearchFilter() {
 
 
     return <div className="flex lg:max-w-[82%] md:max-w-[70%] h-[122px] 
-    mx-auto backdrop:blur-[20] px-[24px] bg-neutral-700/80 
+    mx-auto backdrop:blur-[20] px-[24px] bg-[#FFFFFF29]
     space-x-[24px] justify-evenly items-center rounded-[16px]"
     >
         {
@@ -26,7 +26,7 @@ export function EventSearchFilter() {
                 const camelCaseKey = key[0].toUpperCase() + key.slice(1);
 
                 return <div className="flex flex-col h-[76px] " key={randomString()}>
-                    <label className="h-[24px] font-semibold text-gray-400 mb-[8px]">{camelCaseKey}</label>
+                    <label className="h-[24px] text-[14px] font-semibold text-gray-400 mb-[8px]">{camelCaseKey}</label>
                     <Input
                         startContent={<span className="flex text-black items-center space-x-[16px]">
                             <IconSwitcherSf name={key} />

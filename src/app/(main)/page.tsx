@@ -4,6 +4,7 @@ import { EventSearchFilter } from "./_local_components/EventSearchFilter";
 import { PopularEvents } from "./_local_components/PopularEvents";
 import { EventScheduler } from "./_local_components/EventScheduler";
 import { FAQ } from "./_local_components/FAQ";
+import { AppInfo } from "./_local_components/AppInfo";
 
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
         <h1 className="font-bold text-[48px] py-4">
           Feel The Happiness, Live the Moment
         </h1>
-        <div className="w-[60%] mx-auto text-[18px] ">
+        <div className="w-[60%] mx-auto text-[18px] text-[#AFAFAF]">
           This isn’t just a concert . it’s a story told through sound.
           Every beat and melody pulls you deeper into a world of raw emotion.
           A night where music speaks louder than words.
@@ -32,22 +33,9 @@ export default function Home() {
         /> */}
       </div>
       <EventSearchFilter />
-      <div className="flex items-center justify-evenly min-h-[200px] text-neutral-400 bg-black">
-        <div className="flex items-center space-x-3 bg-gradient-to-r text-center from-white to-neutral-600 text-transparent bg-clip-text">
-          <h1 className="text-[50px] font-medium">+250</h1>
-          <p className="max-w-[130px] text-[15px] text-gray-500">cities used to host concerts</p>
-        </div>
-        <div className="flex items-center space-x-3 bg-gradient-to-r text-center from-white to-neutral-600 text-transparent bg-clip-text">
-          <h1 className="text-[50px] font-medium">+70</h1>
-          <p className="max-w-[130px] text-[15px] text-gray-500"> more than 70 artists joined</p>
-        </div>
-        <div className="flex items-center space-x-3 bg-gradient-to-r text-center from-white to-neutral-600 text-transparent bg-clip-text">
-          <h1 className="text-[50px] font-medium">+320</h1>
-          <p className="max-w-[130px] text-[15px] text-gray-500">registered to be in a concert venue</p>
-        </div>
-      </div>
+      <AppInfo />
       <PopularEvents />
-      <div className="bg-gradient-to-br from-black via-black to-red-950/30 w-full py-20 bg-neutral-900 overflow-hidden">
+      <div className="bg-gradient-to-br from-black via-black to-rose-950/30 w-full bg-neutral-900 overflow-hidden">
         <EventScheduler />
         <FAQ />
       </div>

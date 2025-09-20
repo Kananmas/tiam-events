@@ -28,10 +28,10 @@ export function FAQ() {
     ]
 
 
-    return <div className="relative w-full py-20 overflow-hidden">
+    return <div className="relative w-full overflow-hidden">
         {/* Gradient overlay */}
 
-        <div className="relative z-10 mb-10">
+        <div className="relative z-10 mt-[82px] mb-[40px]">
             <GradientHeader additionalStyles="text-[50px]">FAQ</GradientHeader>
             <p className="text-center text-neutral-300-300 text-[18px]">
                 Find answers to the most common questions about ticket purchasing, 
@@ -39,7 +39,7 @@ export function FAQ() {
             </p>
         </div>
 
-        <div className="relative z-10 w-[80%] mx-auto">
+        <div className="relative z-10 w-[1176px] mb-[82px] mx-auto">
             {questions.map(({ question, answer }) => (
                 <Accordion content={answer} title={question} key={randomString()} />
             ))}

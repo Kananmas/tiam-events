@@ -2,12 +2,12 @@
 
 :root {
   --background: #000000;
-  --foreground: #9c9c9c;
+  --foreground: #AFAFAF;
 }
 
 @font-face {
   font-family: Urbanist;
-  src: url(../../public/fonts/urbanist/Urbanist-Regular.ttf);
+  src: url(../../public/fonts/urbanist/Urbanist-Medium.ttf);
 }
 
 @font-face {
