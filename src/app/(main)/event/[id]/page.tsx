@@ -14,8 +14,8 @@ const hashTagStyle = `
 `
 
 export default function page() {
-    return <div className="flex justify-center space-x-4 items-center my-16">
-        <div className="flex h-full flex-col bg-neutral-900 w-[60%] rounded-[14px] p-4">
+    return <div className="flex justify-center space-x-4 items-start my-16">
+        <div className="flex h-full flex-col bg-neutral-900 w-[776px] rounded-[14px] p-4">
             <div>
                 <Image
                     alt=""
@@ -70,8 +70,8 @@ export default function page() {
                 </ul>
             </PageSection>
         </div>
-        <div className=" h-full flex flex-col bg-neutral-900 w-[30%] rounded-[14px] p-4">
-            <TimeTo
+        <div className=" h-full flex flex-col bg-neutral-900 w-[376px] px-[16px] py-[18.33px] rounded-[14px] ">
+                 <TimeTo
                 days={"05"}
                 hours={"12"}
                 minutes={"08"}
@@ -80,7 +80,7 @@ export default function page() {
             <div className="mb-8 mt-3 flex text-neutral-400 
             font-bold items-center justify-center space-x-2">
                 <Clock size={16} />
-                <div>Time Left To Start</div>
+                <div className="text-[14px]">Time Left To Start</div>
             </div>
             <PageSection
                 icon={<MapPin
@@ -107,7 +107,7 @@ export default function page() {
                 </div>
                 <EventMap />
                 <TicketInfo />
-            </PageSection>
+            </PageSection>           
         </div>
     </div>
 }

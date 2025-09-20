@@ -17,7 +17,7 @@ export function PageSection(props:pageSectionProps) {
     } = props
 
     return <div className={wrapperStyles ?? "flex flex-col my-3"}>
-        <div className={titleStyles ?? "flex justify-start items-center pl-3 space-x-3 font-bold text-[14px] mb-1 text-white"}>
+        <div className={titleStyles ?? "flex justify-start font-[600] items-center space-x-3  text-[16px] mb-1 text-white"}>
             {props.icon}
             <div>{props.title}</div>
         </div>
